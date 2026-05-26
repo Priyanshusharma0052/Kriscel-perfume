@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@import "tailwindcss";
+
+:root{
+
+  --bg:#f7f3ec;
+
+  --white:#ffffff;
+
+  --text:#161412;
+
+  --muted:#6f6760;
+
+  --gold:#a77f37;
+
+  --border:#dfd4c7;
+
+  --ink:#15110e;
+
+  --wine:#5c1f25;
+
+  --sage:#687563;
+
+}
+
+*{
+  box-sizing:border-box;
+  min-width:0;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  margin:0;
+  font-family:'Inter',sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  overflow-x:hidden;
+  word-break:normal;
+  overflow-wrap:anywhere;
+}
+
+a{
+  text-decoration:none;
+}
+
+.title{
+  font-family:'Cormorant Garamond',serif;
+  font-weight:600;
+  letter-spacing:0;
+  line-height:1;
+}
+
+.section{
+  padding:96px 40px;
+}
+
+.glass{
+  background:rgba(255,255,255,0.78);
+  backdrop-filter:blur(18px);
+  border:1px solid rgba(223,212,199,0.8);
+}
+
+.gold{
+  color:var(--gold);
+}
+
+.text-muted{
+  color:var(--muted);
+}
+
+.luxury-shadow{
+  box-shadow:
+  0 22px 70px rgba(38,28,19,0.1),
+  0 2px 10px rgba(38,28,19,0.04);
+}
+
+.eyebrow{
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+}
+
+.dark-section{
+  background:var(--ink);
+  color:var(--bg);
+}
+
+.container-lux{
+  max-width:1220px;
+  margin:0 auto;
+}
+
+.soft-border{
+  border:1px solid rgba(22,20,18,0.12);
+}
+
+.image-treatment{
+  filter:saturate(0.88) contrast(1.04);
+}
+
+button{
+  cursor:pointer;
+}
+
+img{
+  max-width:100%;
+  display:block;
+}
+
+@keyframes auroraShift{
+  0%{transform:translate3d(-8%,0,0) scale(1);}
+  50%{transform:translate3d(8%,0,0) scale(1.04);}
+  100%{transform:translate3d(-8%,0,0) scale(1);}
+}
+
+@keyframes softPulse{
+  0%,100%{opacity:0.55;}
+  50%{opacity:0.9;}
+}
+
+@keyframes riseFloat{
+  0%,100%{transform:translateY(0px);}
+  50%{transform:translateY(-8px);}
+}
+
+.aurora-bg{
+  animation:auroraShift 12s ease-in-out infinite;
+}
+
+.soft-pulse{
+  animation:softPulse 3.2s ease-in-out infinite;
+}
+
+.rise-float{
+  animation:riseFloat 5s ease-in-out infinite;
+}
+
+@media (max-width:768px){
+  .section{
+    padding:64px 16px;
+  }
+}
