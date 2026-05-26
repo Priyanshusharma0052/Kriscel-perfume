@@ -50,6 +50,8 @@ function App() {
         return;
       }
       setCurrentPage("home");
+      // Always reset scroll to top on refresh/hash changes that keep us on Home.
+      window.scrollTo({top:0,behavior:"auto"});
     }
 
     syncPageFromHash();

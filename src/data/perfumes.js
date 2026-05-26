@@ -125,7 +125,7 @@ export const PERFUMES = [
     rating:4.6,
     reviews:61,
     emi:1580,
-    image:"https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?q=80&w=1400&auto=format&fit=crop"
+    image:"https://images.unsplash.com/photo-1541643600914-78b084683601?q=80&w=1400&auto=format&fit=crop"
   },
   {
     id:"oud-reserve",
@@ -213,7 +213,8 @@ export const PERFUMES = [
     rating:4.1,
     reviews:18,
     emi:983,
-    image:"https://images.unsplash.com/photo-1615887023516-86b5c6f4a3c0?q=80&w=1400&auto=format&fit=crop"
+    // Previous image URL 404'd on Unsplash/imgix; keep a stable perfume placeholder.
+    image:"https://images.unsplash.com/photo-1530630458144-014709e10016?q=80&w=1400&auto=format&fit=crop"
   },
   {
     id:"saffron-cuir",
@@ -235,7 +236,7 @@ export const PERFUMES = [
     rating:4.6,
     reviews:27,
     emi:1660,
-    image:"https://images.unsplash.com/photo-1549465220-1a8b9238cd48?q=80&w=1400&auto=format&fit=crop"
+    image:"https://images.unsplash.com/photo-1594035910387-fea47794261f?q=80&w=1400&auto=format&fit=crop"
   },
   {
     id:"patchouli-noir",
@@ -303,7 +304,8 @@ export const PERFUMES = [
     rating:4.2,
     reviews:22,
     emi:980,
-    image:"https://images.unsplash.com/photo-1615486364462-ef6363ad7b45?q=80&w=1400&auto=format&fit=crop"
+    // Previous image URL 404'd on Unsplash/imgix; keep a stable perfume placeholder.
+    image:"https://images.unsplash.com/photo-1547887537-6158d64c35b3?q=80&w=1400&auto=format&fit=crop"
   },
   {
     id:"lemon-neroli-splash",
@@ -457,7 +459,7 @@ export const PERFUMES = [
     rating:4.8,
     reviews:67,
     emi:2190,
-    image:"https://images.unsplash.com/photo-1549465220-1a8b9238cd48?q=80&w=1400&auto=format&fit=crop"
+    image:"https://images.unsplash.com/photo-1523293182086-7651a899d37f?q=80&w=1400&auto=format&fit=crop"
   },
   {
     id:"sandalwood-tonka-suite",
@@ -516,4 +518,3 @@ export const FEATURED_OCCASIONAL_IDS = [
   "saffron-cuir",
   "rose-atelier"
 ];
-
