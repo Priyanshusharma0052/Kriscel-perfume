@@ -3,23 +3,24 @@ import { motion, useMotionValue, useSpring } from "framer-motion";
 import bottle from "../assets/original-bottle.png";
 
 function BottleShowcase3D() {
-  const [zoom,setZoom]=useState(1);
-  const rotate=0;
+  const [zoom, setZoom] = useState(1);
+  const [imageFailed, setImageFailed] = useState(false);
+  const rotate = 0;
 
-  const rotateX=useMotionValue(0);
-  const rotateY=useMotionValue(0);
-  const rX=useSpring(rotateX,{ stiffness:220, damping:18, mass:0.55 });
-  const rY=useSpring(rotateY,{ stiffness:220, damping:18, mass:0.55 });
+  const rotateX = useMotionValue(0);
+  const rotateY = useMotionValue(0);
+  const rX = useSpring(rotateX, { stiffness: 220, damping: 18, mass: 0.55 });
+  const rY = useSpring(rotateY, { stiffness: 220, damping: 18, mass: 0.55 });
 
-  const transform=useMemo(()=>{
+  const transform = useMemo(() => {
     return {
-      rotateX:rX,
-      rotateY:rY,
-      rotateZ:0,
-      scale:zoom,
-      translateZ:90
+      rotateX: rX,
+      rotateY: rY,
+      rotateZ: 0,
+      scale: zoom,
+      translateZ: 90
     };
-  },[rX,rY,zoom]);
+  }, [rX, rY, zoom]);
 
   function clamp(value,min,max){
     return Math.min(max,Math.max(min,value));
@@ -109,16 +110,30 @@ function BottleShowcase3D() {
                   transition={{ duration: 5.6, repeat: Infinity, ease: "easeInOut" }}
                 />
 
-                <motion.img
-                  src={bottle}
-                  alt="Perfume bottle"
-                  className="max-h-[92%] w-auto object-contain drop-shadow-[0_34px_90px_rgba(0,0,0,0.28)]"
-                  style={transform}
-                  whileHover={{ filter: "saturate(1.05) contrast(1.06)" }}
-                  transition={{ duration: 0.35 }}
-                  draggable={false}
-                  loading="lazy"
-                />
+                <div className="relative flex items-center justify-center w-full h-full">
+                  {!imageFailed ? (
+                    <motion.img
+                      src={bottle}
+                      alt="Perfume bottle"
+                      className="w-full max-w-[420px] h-auto object-contain drop-shadow-[0_34px_90px_rgba(0,0,0,0.28)]"
+                      style={transform}
+                      whileHover={{ filter: "saturate(1.05) contrast(1.06)" }}
+                      transition={{ duration: 0.35 }}
+                      draggable={false}
+                      loading="eager"
+                      fetchPriority="high"
+                      decoding="async"
+                      width="900"
+                      height="1200"
+                      onError={() => setImageFailed(true)}
+                    />
+                  ) : (
+                    <div
+                      aria-hidden="true"
+                      className="w-full max-w-[420px] aspect-[3/4] rounded-[2.5rem] border border-white/40 bg-[radial-gradient(circle_at_35%_20%,rgba(255,255,255,0.8),rgba(255,255,255,0)_46%),linear-gradient(180deg,rgba(255,255,255,0.55),rgba(255,255,255,0.18))] shadow-[0_34px_90px_rgba(0,0,0,0.18)]"
+                    />
+                  )}
+                </div>
 
                 <motion.div
                   className="absolute -bottom-10 left-1/2 -translate-x-1/2 w-[82%] h-14 blur-2xl rounded-full pointer-events-none"
