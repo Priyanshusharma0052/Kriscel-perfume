@@ -4,21 +4,44 @@
 
 :root{
 
-  --bg:#f7f3ec;
+  /* Inspired by the uploaded palette (jewel brights + soft pastels). */
+  --palette-rose:#e35aa5;
+  --palette-lilac:#c8a4da;
+  --palette-violet:#7d59c8;
+  --palette-periwinkle:#5b73cf;
+  --palette-sky:#b9d8ff;
+  --palette-aqua:#62c6d6;
+  /* Replacing the earlier "green/mint" accent with light purple. */
+  --palette-mint:#d7b7ff;
+  --palette-teal:#8fb2ff;
+  --palette-blush:#f7e6f1;
+
+  --bg:var(--palette-blush);
+  --surface-1:color-mix(in srgb, var(--palette-blush) 78%, white);
+  --surface-2:color-mix(in srgb, var(--palette-sky) 45%, white);
+  --surface-3:color-mix(in srgb, var(--palette-mint) 44%, white);
+  --surface-4:color-mix(in srgb, var(--palette-lilac) 45%, white);
+  --surface-5:color-mix(in srgb, var(--palette-aqua) 40%, white);
+  --surface-6:color-mix(in srgb, var(--palette-rose) 22%, white);
+  --surface-7:color-mix(in srgb, var(--palette-periwinkle) 28%, white);
+  --surface-8:color-mix(in srgb, var(--palette-violet) 18%, white);
+  --surface-9:color-mix(in srgb, var(--palette-aqua) 20%, color-mix(in srgb, var(--palette-blush) 65%, white));
+  --surface-10:color-mix(in srgb, var(--palette-rose) 14%, color-mix(in srgb, var(--palette-sky) 22%, white));
+  --surface-11:color-mix(in srgb, var(--palette-lilac) 22%, color-mix(in srgb, var(--palette-blush) 68%, white));
 
   --white:#ffffff;
 
-  --text:#161412;
+  --text:#141018;
 
-  --muted:#6f6760;
+  --muted:rgba(20,16,24,0.68);
 
-  --gold:#a77f37;
+  --gold:color-mix(in srgb, var(--palette-rose) 55%, #d6b45b);
 
-  --border:#dfd4c7;
+  --border:rgba(27,26,20,0.14);
 
   --ink:#15110e;
 
-  --wine:#5c1f25;
+  --wine:color-mix(in srgb, var(--palette-violet) 70%, #1b0f24);
 
   --sage:#687563;
 
@@ -52,6 +75,45 @@ a{
   font-weight:600;
   letter-spacing:0;
   line-height:1;
+}
+
+.display{
+  font-family:'Cormorant Garamond',serif;
+  font-weight:700;
+  letter-spacing:-0.02em;
+  line-height:0.95;
+}
+
+.serif{
+  font-family:'Cormorant Garamond',serif;
+}
+
+.sans{
+  font-family:'Inter',sans-serif;
+}
+
+.section-title{
+  font-family:'Cormorant Garamond',serif;
+  font-weight:700;
+  letter-spacing:-0.015em;
+  line-height:0.98;
+}
+
+.section-copy{
+  font-family:'Inter',sans-serif;
+  letter-spacing:0.01em;
+}
+
+.accent{
+  color:var(--wine);
+}
+
+.accent-2{
+  color:var(--palette-rose);
+}
+
+.accent-3{
+  color:var(--palette-periwinkle);
 }
 
 .section{
@@ -89,6 +151,138 @@ a{
   background:var(--ink);
   color:var(--bg);
 }
+
+.tone-1{
+  background:var(--surface-1);
+  color:var(--text);
+}
+
+.tone-2{
+  background:var(--surface-2);
+  color:var(--text);
+}
+
+.tone-3{
+  background:var(--surface-3);
+  color:var(--text);
+}
+
+.tone-4{
+  background:var(--surface-4);
+  color:var(--text);
+}
+
+.tone-5{
+  background:var(--surface-5);
+  color:var(--text);
+}
+
+.tone-6{
+  background:var(--surface-6);
+  color:var(--text);
+}
+
+.tone-7{
+  background:var(--surface-7);
+  color:var(--text);
+}
+
+.tone-8{
+  background:var(--surface-8);
+  color:var(--text);
+}
+
+.tone-9{
+  background:var(--surface-9);
+  color:var(--text);
+}
+
+.tone-10{
+  background:var(--surface-10);
+  color:var(--text);
+}
+
+.tone-11{
+  background:var(--surface-11);
+  color:var(--text);
+}
+
+.tone-1,
+.tone-2,
+.tone-3,
+.tone-4,
+.tone-5,
+.tone-6,
+.tone-7,
+.tone-8,
+.tone-9,
+.tone-10,
+.tone-11{
+  background-image:radial-gradient(circle at 18% 16%, color-mix(in srgb, white 55%, transparent) 0%, transparent 52%);
+  background-blend-mode:soft-light;
+}
+
+.tone-3{
+  background-image:
+    radial-gradient(circle at 18% 16%, color-mix(in srgb, white 55%, transparent) 0%, transparent 52%),
+    radial-gradient(circle at 85% 30%, color-mix(in srgb, var(--palette-violet) 12%, transparent) 0%, transparent 60%);
+}
+
+.tone-7{
+  background-image:
+    radial-gradient(circle at 16% 18%, color-mix(in srgb, white 55%, transparent) 0%, transparent 52%),
+    radial-gradient(circle at 85% 18%, color-mix(in srgb, var(--palette-rose) 10%, transparent) 0%, transparent 60%);
+}
+
+.tone-8{
+  background-image:
+    radial-gradient(circle at 16% 18%, color-mix(in srgb, white 55%, transparent) 0%, transparent 52%),
+    radial-gradient(circle at 70% 70%, color-mix(in srgb, var(--palette-sky) 16%, transparent) 0%, transparent 60%);
+}
+
+.tone-9{
+  background-image:
+    radial-gradient(circle at 14% 22%, color-mix(in srgb, white 55%, transparent) 0%, transparent 52%),
+    radial-gradient(circle at 86% 32%, color-mix(in srgb, var(--palette-aqua) 16%, transparent) 0%, transparent 62%);
+}
+
+.tone-10{
+  background-image:
+    radial-gradient(circle at 14% 22%, color-mix(in srgb, white 55%, transparent) 0%, transparent 52%),
+    radial-gradient(circle at 78% 26%, color-mix(in srgb, var(--palette-rose) 14%, transparent) 0%, transparent 62%);
+}
+
+.tone-11{
+  background-image:
+    radial-gradient(circle at 14% 22%, color-mix(in srgb, white 55%, transparent) 0%, transparent 52%),
+    radial-gradient(circle at 76% 72%, color-mix(in srgb, var(--palette-lilac) 16%, transparent) 0%, transparent 62%);
+}
+
+.highlight{
+  color:var(--palette-periwinkle);
+  font-weight:800;
+}
+
+.highlight-2{
+  color:var(--palette-aqua);
+  font-weight:800;
+}
+
+.tilt-stage{
+  perspective:1200px;
+  transform-style:preserve-3d;
+}
+
+.hover-zoom{
+  transition:transform 420ms cubic-bezier(.2,.9,.2,1), filter 420ms cubic-bezier(.2,.9,.2,1);
+  transform-origin:center;
+}
+
+.hover-zoom:hover{
+  transform:scale(1.05);
+  filter:saturate(1.04) contrast(1.03);
+}
+
 
 .container-lux{
   max-width:1220px;

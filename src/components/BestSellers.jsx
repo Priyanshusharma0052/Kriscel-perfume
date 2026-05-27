@@ -8,7 +8,7 @@ const products = [
     price:7999,
     label:"Smoky oud and amber",
     notes:["Oud","Amber","Musk"],
-    image:"https://images.unsplash.com/photo-1594035910387-fea47794261f?q=80&w=1200&auto=format&fit=crop"
+    image:"https://images.unsplash.com/photo-1615634260167-c8cdede054de?q=80&w=1200&auto=format&fit=crop"
   },
 
   {
@@ -19,7 +19,7 @@ const products = [
     price:9499,
     label:"Iris, suede, black tea",
     notes:["Iris","Black tea","Suede musk"],
-    image:"https://images.unsplash.com/photo-1594035910387-fea47794261f?q=80&w=1200&auto=format&fit=crop"
+    image:"https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?q=80&w=1200&auto=format&fit=crop"
   },
 
   {
@@ -36,16 +36,25 @@ const products = [
 ];
 
 function BestSellers({onPerfumeSelect}) {
+  function colorize(label){
+    const parts=label.split(/(oud|amber|musk|iris|suede|vanilla|tonka)/i);
+    return parts.map((part,index)=>{
+      const lower=part.toLowerCase();
+      if(["oud","amber","musk","vanilla","tonka"].includes(lower)) return <span key={index} className="highlight">{part}</span>;
+      if(["iris","suede"].includes(lower)) return <span key={index} className="highlight-2">{part}</span>;
+      return <span key={index}>{part}</span>;
+    });
+  }
 
   return (
-    <section className="section bg-[#efe6d9]">
+    <section className="section tone-8">
 
       <div className="container-lux">
 
         <div className="text-center max-w-3xl mx-auto mb-14">
-          <p className="eyebrow text-[#5c1f25] mb-4">Most requested</p>
-          <h2 className="title text-5xl md:text-7xl">
-            Best Sellers
+          <p className="eyebrow text-[var(--wine)] mb-4">Most requested</p>
+          <h2 className="section-title text-5xl md:text-7xl">
+            Best <span className="highlight">Sellers</span>
           </h2>
         </div>
 
@@ -56,30 +65,27 @@ function BestSellers({onPerfumeSelect}) {
             <article
               key={index}
               onClick={()=>onPerfumeSelect(item)}
-              className="bg-[#f7f3ec] rounded-lg overflow-hidden soft-border luxury-shadow cursor-pointer"
+              className="bg-[color:rgba(251,232,206,0.75)] rounded-lg overflow-hidden soft-border luxury-shadow cursor-pointer"
             >
 
               <img
                 src={item.image}
                 alt={`${item.name} perfume`}
-                className="h-[330px] w-full object-cover image-treatment"
+                className="h-[330px] w-full object-cover image-treatment hover-zoom"
               />
 
               <div className="p-6">
                 <div className="flex items-start justify-between gap-4">
                   <div>
-                    <h3 className="title text-4xl">
+                    <h3 className="section-title text-4xl">
                       {item.name}
                     </h3>
 
-                    <p className="mt-2 text-muted">
-                      {item.label}
+                    <p className="mt-2 text-muted section-copy">
+                      {colorize(item.label)}
                     </p>
                   </div>
 
-                  <p className="gold text-xl font-semibold">
-                    ₹{item.price.toLocaleString("en-IN")}
-                  </p>
                 </div>
 
                 <button

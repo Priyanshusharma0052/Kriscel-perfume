@@ -18,7 +18,7 @@ function CursorGlow() {
   return (
     <div
       id="glow"
-      className="fixed w-40 h-40 bg-[#D4AF37]/20 blur-3xl rounded-full pointer-events-none z-[999]"
+      className="fixed w-40 h-40 bg-[color:rgba(154,177,122,0.35)] blur-3xl rounded-full pointer-events-none z-[999]"
     ></div>
   );
 }

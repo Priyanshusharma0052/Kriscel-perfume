@@ -1,6 +1,4 @@
 function CartSection({items,onIncrement,onDecrement,onCheckout}) {
-  const total=items.reduce((sum,item)=>sum+item.price*item.quantity,0);
-
   return (
     <section id="cart" className="section bg-[#14100e] text-[#f7f3ec]">
       <div className="container-lux grid lg:grid-cols-[1.2fr_0.8fr] gap-8">
@@ -21,7 +19,9 @@ function CartSection({items,onIncrement,onDecrement,onCheckout}) {
                   <div>
                     <h3 className="title text-4xl">{item.name}</h3>
                     {item.meta && <p className="mt-2 text-[#c9bfb3]">{item.meta}</p>}
-                    <p className="mt-2 text-[#d9c39a] text-lg font-semibold">₹{item.price.toLocaleString("en-IN")}</p>
+                    <p className="mt-2 text-[#d9c39a] text-sm font-semibold uppercase tracking-[0.12em]">
+                      Pricing shared by concierge
+                    </p>
                   </div>
 
                   <div className="flex items-center gap-2">
@@ -55,7 +55,7 @@ function CartSection({items,onIncrement,onDecrement,onCheckout}) {
           </div>
           <div className="flex items-center justify-between mt-3">
             <p className="text-[#c9bfb3]">Estimated total</p>
-            <p className="title text-4xl text-[#f0ddba]">₹{total.toLocaleString("en-IN")}</p>
+            <p className="title text-2xl text-[#f0ddba]">Shared on request</p>
           </div>
           <button
             onClick={onCheckout}

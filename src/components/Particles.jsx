@@ -13,7 +13,7 @@ function Particles() {
 
         <div
           key={index}
-          className="absolute w-2 h-2 bg-[#D4AF37] rounded-full opacity-30 animate-pulse"
+          className="absolute w-2 h-2 bg-[var(--palette-violet)] rounded-full opacity-30 animate-pulse"
           style={{
             top,
             left

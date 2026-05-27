@@ -16,7 +16,7 @@ function Stars({rating=0}) {
       {stars.map((state,index)=>(
         <span
           key={index}
-          className={`text-sm ${state==="empty" ? "text-[#4a433d]" : "text-[#d9c39a]"}`}
+          className={`text-sm ${state==="empty" ? "text-[color:rgba(20,16,24,0.28)]" : "text-[var(--gold)]"}`}
         >
           {state==="half" ? "⯨" : "★"}
         </span>
@@ -54,26 +54,26 @@ function FragranceFinder({onPerfumeSelect}) {
   },[selection]);
 
   return (
-    <section id="finder" className="section bg-[#f7f3ec]">
+    <section id="finder" className="section tone-10">
       <div className="container-lux">
         <div className="max-w-3xl">
-          <p className="eyebrow text-[#5c1f25] mb-4">Smart recommendation</p>
-          <h2 className="title text-4xl sm:text-5xl md:text-7xl">Find Your Perfume By Note Pyramid</h2>
-          <p className="mt-6 md:mt-7 text-base sm:text-lg md:text-xl text-muted leading-7 md:leading-8">
-            Choose one note from each layer: Top, Heart, and Base. The finder recommends one perfume where these notes fit logically.
+          <p className="eyebrow text-[var(--wine)] mb-4">Smart recommendation</p>
+          <h2 className="section-title text-4xl sm:text-5xl md:text-7xl">Find Your <span className="highlight">Perfume</span> By Note Pyramid</h2>
+          <p className="mt-6 md:mt-7 text-base sm:text-lg md:text-xl text-muted leading-7 md:leading-8 section-copy">
+            Choose one note from each layer: <span className="highlight">Top</span>, <span className="highlight">Heart</span>, and <span className="highlight">Base</span>. The finder recommends one perfume where these notes fit logically.
           </p>
         </div>
 
         <div className="mt-10 grid gap-7 items-start lg:grid-cols-[minmax(0,1fr)_minmax(320px,420px)] lg:gap-10">
           <motion.div
-            className="relative bg-white rounded-lg soft-border p-6 md:p-7 luxury-shadow overflow-hidden self-start"
+            className="relative bg-[color:rgba(255,255,255,0.62)] rounded-lg soft-border p-6 md:p-7 luxury-shadow overflow-hidden self-start"
             initial={{ opacity:0, x:-26 }}
             whileInView={{ opacity:1, x:0 }}
             viewport={{ once:true, amount:0.25 }}
             transition={{ duration:0.5 }}
           >
             <motion.div
-              className="absolute -top-20 -right-20 w-56 h-56 rounded-full bg-[#f4d89b]/30 blur-3xl"
+              className="absolute -top-20 -right-20 w-56 h-56 rounded-full bg-[color:rgba(215,183,255,0.55)] blur-3xl"
               animate={{ scale:[1,1.1,1], opacity:[0.45,0.7,0.45] }}
               transition={{ duration:5, repeat:Infinity, ease:"easeInOut" }}
             />
@@ -85,8 +85,8 @@ function FragranceFinder({onPerfumeSelect}) {
                 transition={{ delay:0.05, duration:0.4 }}
               >
                 <div className="flex items-center justify-between mb-3 gap-3">
-                  <p className="title text-3xl sm:text-4xl text-[#5c1f25]">Top Notes (The Opening)</p>
-                  <p className="text-xs sm:text-sm font-semibold uppercase tracking-[0.12em] text-[#7a6e61]">Duration: 0-15 mins</p>
+                  <p className="section-title text-3xl sm:text-4xl text-[var(--wine)]">Top Notes (The Opening)</p>
+                  <p className="text-xs sm:text-sm font-semibold uppercase tracking-[0.12em] text-[color:var(--muted)]">Duration: 0-15 mins</p>
                 </div>
                 <div className="flex flex-wrap gap-2">
                   {NOTE_PYRAMID.top.map((note)=>{
@@ -98,7 +98,7 @@ function FragranceFinder({onPerfumeSelect}) {
                         className={`px-4 py-2.5 rounded-full border text-xs sm:text-sm font-semibold duration-200 ${
                           active
                             ? "bg-[#161412] text-white border-[#161412]"
-                            : "bg-[#f7f3ec] text-[#161412] border-[#161412]/20 hover:border-[#161412]/45"
+                            : "bg-[color:rgba(255,255,255,0.6)] text-[color:var(--text)] border-[#161412]/20 hover:border-[#161412]/45"
                         }`}
                         whileHover={{ y:-3, scale:1.03 }}
                         whileTap={{ scale:0.97 }}
@@ -118,8 +118,8 @@ function FragranceFinder({onPerfumeSelect}) {
                 transition={{ delay:0.12, duration:0.4 }}
               >
                 <div className="flex items-center justify-between mb-3 gap-3">
-                  <p className="title text-3xl sm:text-4xl text-[#5c1f25]">Middle Notes (The Heart)</p>
-                  <p className="text-xs sm:text-sm font-semibold uppercase tracking-[0.12em] text-[#7a6e61]">Duration: 15 mins-4 hrs</p>
+                  <p className="section-title text-3xl sm:text-4xl text-[var(--wine)]">Middle Notes (The Heart)</p>
+                  <p className="text-xs sm:text-sm font-semibold uppercase tracking-[0.12em] text-[color:var(--muted)]">Duration: 15 mins-4 hrs</p>
                 </div>
                 <div className="flex flex-wrap gap-2">
                   {NOTE_PYRAMID.heart.map((note)=>{
@@ -131,7 +131,7 @@ function FragranceFinder({onPerfumeSelect}) {
                         className={`px-4 py-2.5 rounded-full border text-xs sm:text-sm font-semibold duration-200 ${
                           active
                             ? "bg-[#161412] text-white border-[#161412]"
-                            : "bg-[#f7f3ec] text-[#161412] border-[#161412]/20 hover:border-[#161412]/45"
+                            : "bg-[color:rgba(255,255,255,0.6)] text-[color:var(--text)] border-[#161412]/20 hover:border-[#161412]/45"
                         }`}
                         whileHover={{ y:-3, scale:1.03 }}
                         whileTap={{ scale:0.97 }}
@@ -151,8 +151,8 @@ function FragranceFinder({onPerfumeSelect}) {
                 transition={{ delay:0.2, duration:0.4 }}
               >
                 <div className="flex items-center justify-between mb-3 gap-3">
-                  <p className="title text-3xl sm:text-4xl text-[#5c1f25]">Base Notes (The Soul)</p>
-                  <p className="text-xs sm:text-sm font-semibold uppercase tracking-[0.12em] text-[#7a6e61]">Duration: 4-12 hrs</p>
+                  <p className="section-title text-3xl sm:text-4xl text-[var(--wine)]">Base Notes (The Soul)</p>
+                  <p className="text-xs sm:text-sm font-semibold uppercase tracking-[0.12em] text-[color:var(--muted)]">Duration: 4-12 hrs</p>
                 </div>
                 <div className="flex flex-wrap gap-2">
                   {NOTE_PYRAMID.base.map((note)=>{
@@ -164,7 +164,7 @@ function FragranceFinder({onPerfumeSelect}) {
                         className={`px-4 py-2.5 rounded-full border text-xs sm:text-sm font-semibold duration-200 ${
                           active
                             ? "bg-[#161412] text-white border-[#161412]"
-                            : "bg-[#f7f3ec] text-[#161412] border-[#161412]/20 hover:border-[#161412]/45"
+                            : "bg-[color:rgba(255,255,255,0.6)] text-[color:var(--text)] border-[#161412]/20 hover:border-[#161412]/45"
                         }`}
                         whileHover={{ y:-3, scale:1.03 }}
                         whileTap={{ scale:0.97 }}
@@ -209,7 +209,7 @@ function FragranceFinder({onPerfumeSelect}) {
                   <img
                     src={bestMatch.image}
                     alt={`${bestMatch.name} perfume`}
-                    className="w-full h-40 sm:h-44 object-cover image-treatment"
+                    className="w-full h-40 sm:h-44 object-cover image-treatment hover-zoom"
                     loading="lazy"
                   />
                 </div>
@@ -220,9 +220,6 @@ function FragranceFinder({onPerfumeSelect}) {
                       {bestMatch.family} • {bestMatch.concentration || "Signature"}
                     </p>
                   </div>
-                  <p className="gold font-semibold text-lg whitespace-nowrap">
-                    ₹{Number(bestMatch.price || 0).toLocaleString("en-IN")}
-                  </p>
                 </div>
 
                 <p className="mt-3 text-sm text-[#d3c9bc] leading-6">

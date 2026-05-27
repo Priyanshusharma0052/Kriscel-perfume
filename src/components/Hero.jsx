@@ -5,9 +5,9 @@ function Hero() {
   return (
     <section id="home" className="relative min-h-screen overflow-hidden flex items-center pt-24 pb-12">
       <img
-        src="https://images.unsplash.com/photo-1594035910387-fea47794261f?q=80&w=1800&auto=format&fit=crop"
-        alt="Noir perfume bottle on a warm luxury vanity"
-        className="absolute inset-0 w-full h-full object-cover image-treatment aurora-bg"
+        src="https://images.unsplash.com/photo-1598187619306-4e713a7fee10?q=80&w=1548&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        alt="Perfume bottle on a modern vanity"
+        className="absolute inset-0  w-full h-full object-cover image-treatment aurora-bg"
       />
 
       <div className="absolute inset-0 bg-[#120d0a]/74"></div>
@@ -17,8 +17,8 @@ function Hero() {
 
         <div className="max-w-4xl text-[#f7f3ec]">
 
-          <p className="eyebrow mb-6 text-[#d9c39a]">
-            Fine fragrance house
+          <p className="eyebrow mb-6 text-[color:rgba(195,204,155,0.95)]">
+            Modern perfume studio
           </p>
 
           <motion.h1
@@ -31,16 +31,14 @@ function Hero() {
 
             Sculpted
             <br />
-            In Scent
+            In <span className="highlight">Scent</span>
             <br />
             And Shadow
 
           </motion.h1>
 
           <p className="mt-6 md:mt-8 text-base sm:text-lg md:text-2xl text-[#f0e9de] max-w-2xl leading-8 md:leading-9 [text-shadow:0_4px_18px_rgba(0,0,0,0.55)]">
-
-            Layered oud, smoked rose, saffron, and skin-soft amber composed for evenings that deserve a signature.
-
+            Warm <span className="highlight">oud</span>, soft <span className="highlight">rose</span>, a touch of <span className="highlight">saffron</span>, and skin-close <span className="highlight">amber</span>—made for nights you’ll remember.
           </p>
 
           <motion.div
@@ -52,7 +50,7 @@ function Hero() {
 
             <MagneticButton
               onClick={()=>{window.location.hash="collection";}}
-              className="bg-[#f4d89b] text-[#161412] px-7 sm:px-9 py-3.5 sm:py-4 rounded-full font-semibold text-base sm:text-lg"
+              className="bg-[color:rgba(251,232,206,0.92)] text-[#161412] px-7 sm:px-9 py-3.5 sm:py-4 rounded-full font-semibold text-base sm:text-lg border border-white/10"
             >
 
               Explore Collection

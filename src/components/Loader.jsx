@@ -27,7 +27,7 @@ function Loader() {
         className="title text-8xl gold"
       >
 
-        NOIR
+        KRISCEL PERFUMES
 
       </motion.h1>
 

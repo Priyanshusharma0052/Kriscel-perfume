@@ -11,41 +11,40 @@ function ProductPage({onPerfumeSelect,onRequestAvailability}) {
   const featuredPerfume={
     id:`velvet-noir-${size}`,
     name:"Velvet Noir",
-    image:"https://images.unsplash.com/photo-1594035910387-fea47794261f?q=80&w=1200&auto=format&fit=crop",
+    image:"https://images.unsplash.com/photo-1547887537-6158d64c35b3?q=80&w=1200&auto=format&fit=crop",
     family:"Amber Floral",
     concentration:"Extrait",
     notes:["Rose smoke","Oud","Amber","Vanilla","Musk"],
-    description:"A luxurious fragrance crafted with rose smoke, oud, amber, vanilla, and a velvet-soft musk that wears close after midnight.",
+    description:"Rose and oud up front, amber underneath, and a smooth vanilla-musk finish that stays close all night.",
     price:selectedPrice
   };
 
   return (
-    <section id="shop" className="section bg-[#f7f3ec]">
+    <section id="shop" className="section tone-5">
 
       <div className="container-lux grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
         <div className="relative">
-          <div className="absolute inset-6 border border-[#a77f37]/30"></div>
+          <div className="absolute inset-6 border border-[color:rgba(255,255,255,0.55)]"></div>
           <img
-            src="https://images.unsplash.com/photo-1594035910387-fea47794261f?q=80&w=1200&auto=format&fit=crop"
+            src="https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?q=80&w=1200&auto=format&fit=crop"
             alt="Velvet Noir perfume bottle"
-            className="relative w-full aspect-[4/5] object-cover image-treatment"
+            className="relative w-full aspect-[4/5] object-cover image-treatment hover-zoom"
           />
         </div>
 
         <div>
 
-          <p className="eyebrow text-[#5c1f25] mb-4">Featured extrait</p>
+          <p className="eyebrow text-[var(--wine)] mb-4">Featured extrait</p>
 
-          <h2 className="title text-4xl sm:text-5xl md:text-7xl">
+          <h2 className="section-title text-4xl sm:text-5xl md:text-7xl">
 
-            Velvet Noir
+            Velvet <span className="highlight">Noir</span>
 
           </h2>
 
-          <p className="mt-6 md:mt-7 text-base sm:text-xl md:text-2xl text-muted leading-7 sm:leading-9 md:leading-10">
-
-            A luxurious fragrance crafted with rose smoke, oud, amber, vanilla, and a velvet-soft musk that wears close after midnight.
+          <p className="mt-6 md:mt-7 text-base sm:text-xl md:text-2xl text-muted leading-7 sm:leading-9 md:leading-10 section-copy">
+            Think <span className="highlight">rose</span> wrapped in <span className="highlight">oud</span>, warmed by <span className="highlight">amber</span>, finished with vanilla and a clean musk.
 
           </p>
 
@@ -57,7 +56,9 @@ function ProductPage({onPerfumeSelect,onRequestAvailability}) {
             ))}
           </div>
 
-          <h3 className="text-4xl sm:text-5xl mt-8 md:mt-9 gold title">₹{selectedPrice.toLocaleString("en-IN")}</h3>
+          <p className="mt-8 md:mt-9 text-sm sm:text-base text-muted section-copy">
+            Want availability for your city? Tap <span className="highlight-2">Request Availability</span> and we’ll reply with details.
+          </p>
 
           <div className="flex flex-wrap gap-3 mt-7 md:mt-8">
 
@@ -98,7 +99,7 @@ function ProductPage({onPerfumeSelect,onRequestAvailability}) {
             </button>
             <button
               onClick={()=>onRequestAvailability(featuredPerfume)}
-              className="w-full sm:w-auto bg-[#5c1f25] text-white px-7 sm:px-10 py-4 sm:py-5 rounded-full text-base sm:text-lg font-semibold"
+              className="w-full sm:w-auto bg-[var(--wine)] text-white px-7 sm:px-10 py-4 sm:py-5 rounded-full text-base sm:text-lg font-semibold"
             >
             Request Availability
             </button>

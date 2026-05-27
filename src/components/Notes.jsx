@@ -20,14 +20,14 @@ function Notes() {
   ];
 
   return (
-    <section id="notes" className="section bg-[#f7f3ec]">
+    <section id="notes" className="section tone-9">
 
       <div className="container-lux">
 
         <div className="max-w-3xl mb-14">
-          <p className="eyebrow text-[#5c1f25] mb-4">Fragrance architecture</p>
-          <h2 className="title text-5xl md:text-7xl">
-            Built in layers, like a room after dusk.
+          <p className="eyebrow text-[var(--wine)] mb-4">Fragrance architecture</p>
+          <h2 className="section-title text-5xl md:text-7xl">
+            Built in <span className="highlight">layers</span>, like a room after dusk.
           </h2>
         </div>
 
@@ -37,7 +37,7 @@ function Notes() {
 
             <motion.article
               key={note.title}
-              className="border border-[#161412]/12 rounded-lg p-7 bg-white luxury-shadow"
+              className="border border-[#161412]/12 rounded-lg p-7 bg-[color:rgba(255,255,255,0.62)] luxury-shadow"
               initial={{ opacity:0, y:26 }}
               whileInView={{ opacity:1, y:0 }}
               viewport={{ once:true, amount:0.25 }}
@@ -45,21 +45,21 @@ function Notes() {
               transition={{ duration:0.4 }}
             >
 
-              <p className="eyebrow text-[#a77f37] mb-6">
+              <p className="eyebrow text-[var(--gold)] mb-6">
                 0{index+1}
               </p>
 
-              <h3 className="title text-4xl mb-5">
+              <h3 className="section-title text-4xl mb-5">
                 {note.title}
               </h3>
 
-              <ul className="space-y-3 text-xl text-[#2a2623]">
+              <ul className="space-y-3 text-xl text-[color:var(--text)] serif">
                 {note.items.map((item)=>(
                   <li key={item}>{item}</li>
                 ))}
               </ul>
 
-              <p className="mt-8 leading-7 text-muted">
+              <p className="mt-8 leading-7 text-muted section-copy">
                 {note.copy}
               </p>
 

@@ -1,27 +1,27 @@
 function VideoSection() {
   return (
-    <section id="atelier" className="section bg-[#f7f3ec]">
+    <section id="atelier" className="section tone-6">
       <div className="container-lux grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
         <div className="relative">
           <img
-            src="https://images.unsplash.com/photo-1594035910387-fea47794261f?q=80&w=1600&auto=format&fit=crop"
+            src="https://images.unsplash.com/photo-1523293182086-7651a899d37f?q=80&w=1600&auto=format&fit=crop"
             alt="Atelier perfume composition"
-            className="w-full aspect-[4/5] object-cover rounded-lg soft-border image-treatment luxury-shadow"
+            className="w-full aspect-[4/5] object-cover rounded-lg soft-border image-treatment luxury-shadow hover-zoom"
           />
           <div className="absolute inset-4 border border-white/45 rounded-lg pointer-events-none"></div>
         </div>
 
         <div>
-          <p className="eyebrow text-[#5c1f25] mb-5">Inside the atelier</p>
+          <p className="eyebrow text-[var(--wine)] mb-5">Inside the atelier</p>
 
-          <h2 className="title text-5xl sm:text-6xl md:text-7xl max-w-3xl">
+          <h2 className="section-title text-5xl sm:text-6xl md:text-7xl max-w-3xl">
             Crafted
             <br />
-            With Quiet Precision
+            With <span className="highlight">Quiet Precision</span>
           </h2>
 
-          <p className="mt-7 max-w-2xl text-lg md:text-xl leading-8 text-muted">
-            Every bottle is macerated in small batches, checked by hand, and finished with weighty glass made to sit beautifully in a designed space.
+          <p className="mt-7 max-w-2xl text-lg md:text-xl leading-8 text-muted section-copy">
+            We blend in small batches, let the oils settle, then check each bottle by hand before it leaves the studio.
           </p>
         </div>
       </div>

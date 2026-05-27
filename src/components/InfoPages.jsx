@@ -2,9 +2,9 @@ import { useState } from "react";
 
 function AboutPage() {
   return (
-    <section className="section bg-[#f7f3ec] pt-28 md:pt-32">
+    <section className="section tone-1 pt-28 md:pt-32">
       <div className="container-lux">
-        <p className="eyebrow text-[#5c1f25] mb-4">About NOIR</p>
+        <p className="eyebrow text-[var(--wine)] mb-4">About NOIR</p>
         <h1 className="title text-4xl sm:text-5xl md:text-7xl max-w-4xl">A Modern Luxury Fragrance House</h1>
         <p className="mt-6 md:mt-7 max-w-4xl text-base sm:text-lg md:text-xl leading-7 md:leading-8 text-muted">
           NOIR creates refined perfumes rooted in material quality, olfactive depth, and architectural restraint.
@@ -59,9 +59,9 @@ function CareersPage() {
   ];
 
   return (
-    <section className="section bg-[#f7f3ec] pt-28 md:pt-32">
+    <section className="section tone-2 pt-28 md:pt-32">
       <div className="container-lux">
-        <p className="eyebrow text-[#5c1f25] mb-4">Careers</p>
+        <p className="eyebrow text-[var(--wine)] mb-4">Careers</p>
         <h1 className="title text-4xl sm:text-5xl md:text-7xl max-w-4xl">Build Luxury Experiences With Us</h1>
         <p className="mt-6 md:mt-7 max-w-4xl text-base sm:text-lg md:text-xl leading-7 md:leading-8 text-muted">
           We are building a team of people who care deeply about craft, hospitality, and design.
@@ -106,10 +106,10 @@ function ContactPage() {
   }
 
   return (
-    <section className="section bg-[#f7f3ec] pt-28 md:pt-32">
+    <section className="section tone-1 pt-28 md:pt-32">
       <div className="container-lux grid lg:grid-cols-[1fr_1.1fr] gap-8">
         <div>
-          <p className="eyebrow text-[#5c1f25] mb-4">Contact</p>
+          <p className="eyebrow text-[var(--wine)] mb-4">Contact</p>
           <h1 className="title text-4xl sm:text-5xl md:text-7xl">Talk To Our Concierge</h1>
           <p className="mt-6 md:mt-7 text-base sm:text-lg md:text-xl text-muted leading-7 md:leading-8">
             For product guidance, gifting support, and order help, contact our team directly.
@@ -162,9 +162,9 @@ function ContactPage() {
 
 function TermsPage() {
   return (
-    <section className="section bg-[#f7f3ec] pt-28 md:pt-32">
+    <section className="section tone-2 pt-28 md:pt-32">
       <div className="container-lux max-w-4xl">
-        <p className="eyebrow text-[#5c1f25] mb-4">Legal</p>
+        <p className="eyebrow text-[var(--wine)] mb-4">Legal</p>
         <h1 className="title text-4xl sm:text-5xl md:text-7xl">Terms & Conditions</h1>
         <div className="mt-8 space-y-6 text-[#2a2623] leading-8">
           <p>
@@ -185,9 +185,9 @@ function TermsPage() {
 
 function PoliciesPage() {
   return (
-    <section className="section bg-[#f7f3ec] pt-28 md:pt-32">
+    <section className="section tone-1 pt-28 md:pt-32">
       <div className="container-lux max-w-4xl">
-        <p className="eyebrow text-[#5c1f25] mb-4">Legal</p>
+        <p className="eyebrow text-[var(--wine)] mb-4">Legal</p>
         <h1 className="title text-4xl sm:text-5xl md:text-7xl">Policies</h1>
         <div className="mt-8 space-y-6 text-[#2a2623] leading-8">
           <p>

@@ -27,20 +27,20 @@ function Navbar() {
       initial={{ y:-24, opacity:0 }}
       animate={{ y:0, opacity:1 }}
       transition={{ duration:0.45 }}
-      className="fixed top-0 w-full z-50 bg-[#f7f3ec]/88 backdrop-blur-xl border-b border-[#161412]/10"
+      className="fixed top-0 w-full z-50 bg-[color:color-mix(in_srgb,var(--palette-mint)_55%,white)] border-b border-[color:rgba(20,16,24,0.12)] shadow-[0_14px_40px_rgba(0,0,0,0.08)]"
     >
 
       <div className="container-lux flex justify-between items-center px-5 md:px-10 py-4 md:py-5">
 
-        <a href="#home" onClick={goHome} className="text-3xl sm:text-4xl md:text-5xl title text-[#161412]">
-          NOIR
+        <a href="#home" onClick={goHome} className="text-2xl sm:text-3xl md:text-4xl title font-bold text-[color:var(--text)] tracking-[0.08em] uppercase">
+          KRISCEL PERFUMES
         </a>
 
-        <ul className="hidden md:flex gap-8 text-sm font-semibold uppercase tracking-[0.16em] text-[#5f5750]">
+        <ul className="hidden md:flex gap-8 text-sm font-semibold uppercase tracking-[0.16em] text-[color:var(--muted)]">
 
           {links.map((link)=>(
             <li key={link.href}>
-              <a href={link.href} className="hover:text-[#5c1f25] duration-300">
+              <a href={link.href} className="hover:text-[var(--wine)] duration-300">
                 {link.label}
               </a>
             </li>
@@ -50,7 +50,7 @@ function Navbar() {
 
         <button
           onClick={()=>setOpen(true)}
-          className="md:hidden w-11 h-11 inline-flex items-center justify-center rounded-full border border-[#161412]/10"
+          className="md:hidden w-11 h-11 inline-flex items-center justify-center rounded-full border border-[color:var(--border)]"
           aria-label="Open menu"
         >
 
@@ -62,10 +62,10 @@ function Navbar() {
 
       {open && (
 
-        <div className="fixed inset-0 bg-[#f7f3ec] z-50 flex flex-col items-center justify-center gap-6 text-2xl sm:text-3xl title">
+        <div className="fixed inset-0 tone-1 z-50 flex flex-col items-center justify-center gap-6 text-2xl sm:text-3xl title">
 
           <button
-            className="absolute top-6 right-6 w-12 h-12 inline-flex items-center justify-center rounded-full border border-[#161412]/10"
+            className="absolute top-6 right-6 w-12 h-12 inline-flex items-center justify-center rounded-full border border-[color:var(--border)]"
             onClick={()=>setOpen(false)}
             aria-label="Close menu"
           >

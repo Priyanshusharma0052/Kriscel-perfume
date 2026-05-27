@@ -13,7 +13,7 @@ function Stars({rating=0}) {
       {stars.map((state,index)=>(
         <span
           key={index}
-          className={`text-sm ${state==="empty" ? "text-[#c8beb1]" : "text-[#a77f37]"}`}
+          className={`text-sm ${state==="empty" ? "text-[color:rgba(27,26,20,0.28)]" : "text-[var(--gold)]"}`}
         >
           {state==="half" ? "⯨" : "★"}
         </span>
@@ -45,9 +45,9 @@ function PerfumeDetailsModal({perfume,onClose,startWithAvailability=false}) {
 
   return (
     <div className="fixed inset-0 z-[120] bg-black/70 backdrop-blur-sm flex items-center justify-center p-2 sm:p-4">
-      <div className="w-full max-w-5xl bg-[#f7f3ec] rounded-lg overflow-hidden max-h-[95vh] overflow-y-auto">
+      <div className="w-full max-w-5xl tone-1 rounded-lg overflow-hidden max-h-[95vh] overflow-y-auto">
         <div className="grid lg:grid-cols-2">
-          <div className="bg-[#e8ddd0]">
+          <div className="bg-[color:rgba(195,204,155,0.55)]">
             <img
               src={perfume.image}
               alt={`${perfume.name} perfume`}
@@ -58,7 +58,7 @@ function PerfumeDetailsModal({perfume,onClose,startWithAvailability=false}) {
           <div className="p-4 sm:p-6 md:p-8">
             <div className="flex items-start justify-between gap-4">
               <div>
-                <p className="eyebrow text-[#5c1f25] mb-3">{perfume.concentration || "Signature perfume"}</p>
+                <p className="eyebrow text-[var(--wine)] mb-3">{perfume.concentration || "Signature perfume"}</p>
                 <h3 className="title text-4xl sm:text-5xl md:text-6xl">{perfume.name}</h3>
                 <div className="mt-3 flex flex-wrap items-center gap-3">
                   <div className="flex items-center gap-2">
@@ -70,7 +70,7 @@ function PerfumeDetailsModal({perfume,onClose,startWithAvailability=false}) {
               </div>
               <button
                 onClick={onClose}
-                className="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-[#161412]/20 text-xl"
+                className="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-[#161412]/20 text-xl bg-[color:rgba(251,232,206,0.55)]"
                 aria-label="Close details modal"
               >
                 ×
@@ -83,7 +83,7 @@ function PerfumeDetailsModal({perfume,onClose,startWithAvailability=false}) {
 
             {perfume.notes?.length>0 && (
               <div className="mt-5">
-                <p className="eyebrow text-[#a77f37] mb-3">Notes</p>
+                <p className="eyebrow text-[var(--gold)] mb-3">Notes</p>
                 <div className="flex flex-wrap gap-2">
                   {perfume.notes.map((item)=>(
                     <span key={item} className="px-3 py-1.5 rounded-full bg-white border border-[#161412]/12 text-xs sm:text-sm font-semibold">
@@ -94,20 +94,10 @@ function PerfumeDetailsModal({perfume,onClose,startWithAvailability=false}) {
               </div>
             )}
 
-            <div className="mt-6 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-3">
-              <div className="flex items-baseline gap-3">
-                <p className="title text-3xl sm:text-4xl gold">₹{Number(perfume.price || 0).toLocaleString("en-IN")}</p>
-                {perfume.mrp && (
-                  <p className="text-sm text-[#7a6e61] line-through">
-                    ₹{Number(perfume.mrp).toLocaleString("en-IN")}
-                  </p>
-                )}
-              </div>
-              {perfume.emi && (
-                <p className="text-xs sm:text-sm text-[#6c635b]">
-                  or <span className="font-semibold text-[#2a2623]">₹{Number(perfume.emi).toLocaleString("en-IN")}</span>/month
-                </p>
-              )}
+            <div className="mt-6 rounded-lg border border-[#161412]/12 bg-[color:rgba(255,255,255,0.62)] px-4 py-3">
+              <p className="text-sm text-muted section-copy">
+                Want to buy this? Hit <span className="highlight-2">Request Availability</span> and we’ll share options for your city.
+              </p>
             </div>
 
             {(perfume.topNotes?.length || perfume.heartNotes?.length || perfume.baseNotes?.length) && (
@@ -159,7 +149,7 @@ function PerfumeDetailsModal({perfume,onClose,startWithAvailability=false}) {
             {!showForm && (
               <button
                 onClick={()=>setShowForm(true)}
-                className="mt-7 w-full rounded-full bg-[#5c1f25] text-white py-4 font-semibold"
+                className="mt-7 w-full rounded-full bg-[var(--wine)] text-white py-4 font-semibold"
               >
                 Request Availability
               </button>

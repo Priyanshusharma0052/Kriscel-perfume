@@ -2,41 +2,43 @@ const options=[
   {
     id:"discovery-kit",
     title:"Discovery Kit",
-    copy:"Five 2ml extrait samples tailored to your note profile.",
+    copy:"Five 2ml extrait samples picked around the notes you actually like.",
     price:1499
   },
   {
     id:"gift-wrap",
     title:"Signature Gift Wrap",
-    copy:"Lacquered box, silk ribbon, and handwritten card.",
+    copy:"A clean gift box, ribbon, and a short handwritten note.",
     price:699
   },
   {
     id:"scent-consult",
     title:"1:1 Scent Consultation",
-    copy:"15-minute online session with a fragrance specialist.",
+    copy:"A quick 15‑minute call to narrow down what suits you.",
     price:999
   }
 ];
 
 function ConciergeOptions() {
   return (
-    <section id="options" className="section bg-[#f3e9db]">
+    <section id="options" className="section tone-11">
       <div className="container-lux">
         <div className="max-w-3xl">
-          <p className="eyebrow text-[#5c1f25] mb-4">More options</p>
-          <h2 className="title text-4xl sm:text-5xl md:text-7xl">Concierge Services & Gifting</h2>
-          <p className="mt-6 md:mt-7 text-base sm:text-lg md:text-xl text-muted leading-7 md:leading-8">
-            Build a complete luxury experience with sampling, gifting, and one-on-one fragrance guidance.
+          <p className="eyebrow text-[var(--wine)] mb-4">More options</p>
+          <h2 className="section-title text-4xl sm:text-5xl md:text-7xl">Concierge <span className="highlight">Services</span> & <span className="highlight-2">Gifting</span></h2>
+          <p className="mt-6 md:mt-7 text-base sm:text-lg md:text-xl text-muted leading-7 md:leading-8 section-copy">
+            Sampling, gifting, and one-on-one <span className="highlight">fragrance</span> help—simple, quick, and personal.
           </p>
         </div>
 
         <div className="mt-10 grid md:grid-cols-3 gap-6">
           {options.map((item)=>(
-            <article key={item.id} className="bg-[#f7f3ec] soft-border rounded-lg p-6 luxury-shadow">
+            <article key={item.id} className="bg-[color:rgba(251,232,206,0.75)] soft-border rounded-lg p-6 luxury-shadow">
               <h3 className="title text-3xl sm:text-4xl">{item.title}</h3>
               <p className="mt-4 text-muted leading-7">{item.copy}</p>
-              <p className="mt-5 text-2xl font-semibold gold">₹{item.price.toLocaleString("en-IN")}</p>
+              <p className="mt-5 text-sm text-muted">
+                Pricing shared on request.
+              </p>
               <button className="mt-5 w-full rounded-full bg-[#161412] text-white py-3 font-semibold">
                 Learn More
               </button>

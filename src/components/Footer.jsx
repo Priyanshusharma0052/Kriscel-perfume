@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 function Footer() {
 
   return (
-    <footer className="bg-[#0f0b09] text-[#f7f3ec] border-t border-white/10 py-16 px-5 md:px-10">
+    <footer className="bg-[radial-gradient(circle_at_20%_10%,color-mix(in_srgb,var(--palette-rose)_35%,transparent)_0%,transparent_55%),linear-gradient(135deg,color-mix(in_srgb,var(--palette-violet)_65%,#0a0610)_0%,#05040a_80%)] text-white border-t border-white/10 py-16 px-5 md:px-10">
 
       <div className="container-lux grid md:grid-cols-4 gap-12">
 
@@ -16,14 +16,14 @@ function Footer() {
 
           <a
             href="#home"
-            className="title text-5xl text-[#d9c39a] inline-block hover:text-[#f0ddba] duration-200"
+            className="title text-4xl sm:text-5xl text-[color:rgba(255,255,255,0.96)] inline-block hover:text-white duration-200 tracking-[0.06em] uppercase"
           >
-            NOIR
+            KRISCEL PERFUMES
           </a>
 
-          <p className="mt-6 text-[#c9bfb3] leading-8">
+          <p className="mt-6 text-white/75 leading-8">
 
-            Luxury fragrances crafted with architectural restraint, rare materials, and a long, elegant trail.
+            Perfumes made for everyday wear—clean, memorable, and easy to reach for.
 
           </p>
 
@@ -35,11 +35,11 @@ function Footer() {
             Collections
           </h3>
 
-          <ul className="space-y-4 text-[#c9bfb3]">
+          <ul className="space-y-4 text-white/70">
 
-            <li><a href="#collection" className="hover:text-white duration-200">Luxury Oud</a></li>
-            <li><a href="#collection" className="hover:text-white duration-200">Royal Amber</a></li>
-            <li><a href="#collection" className="hover:text-white duration-200">Velvet Collection</a></li>
+            <li><a href="#collection" className="hover:text-[color:rgba(251,232,206,0.95)] duration-200">Luxury Oud</a></li>
+            <li><a href="#collection" className="hover:text-[color:rgba(251,232,206,0.95)] duration-200">Royal Amber</a></li>
+            <li><a href="#collection" className="hover:text-[color:rgba(251,232,206,0.95)] duration-200">Velvet Collection</a></li>
 
           </ul>
 
@@ -51,11 +51,11 @@ function Footer() {
             Company
           </h3>
 
-          <ul className="space-y-4 text-[#c9bfb3]">
+          <ul className="space-y-4 text-white/70">
 
-            <li><a href="#about" className="hover:text-white duration-200">About</a></li>
-            <li><a href="#careers" className="hover:text-white duration-200">Careers</a></li>
-            <li><a href="#contact" className="hover:text-white duration-200">Contact</a></li>
+            <li><a href="#about" className="hover:text-[color:rgba(251,232,206,0.95)] duration-200">About</a></li>
+            <li><a href="#careers" className="hover:text-[color:rgba(251,232,206,0.95)] duration-200">Careers</a></li>
+            <li><a href="#contact" className="hover:text-[color:rgba(251,232,206,0.95)] duration-200">Contact</a></li>
 
           </ul>
 
@@ -67,10 +67,10 @@ function Footer() {
             Legal
           </h3>
 
-          <ul className="space-y-4 text-[#c9bfb3]">
+          <ul className="space-y-4 text-white/70">
 
-            <li><a href="#terms" className="hover:text-white duration-200">Terms & Conditions</a></li>
-            <li><a href="#policies" className="hover:text-white duration-200">Policies</a></li>
+            <li><a href="#terms" className="hover:text-[color:rgba(251,232,206,0.95)] duration-200">Terms & Conditions</a></li>
+            <li><a href="#policies" className="hover:text-[color:rgba(251,232,206,0.95)] duration-200">Policies</a></li>
 
           </ul>
 
@@ -89,7 +89,7 @@ function Footer() {
               target="_blank"
               rel="noreferrer"
               aria-label="Visit Noir on Instagram"
-              className="hover:text-[#f0ddba] duration-200"
+              className="hover:text-[color:rgba(251,232,206,0.92)] duration-200 text-white/90"
               whileHover={{ y:-4, scale:1.08 }}
               transition={{ duration:0.2 }}
             >
@@ -100,7 +100,7 @@ function Footer() {
               target="_blank"
               rel="noreferrer"
               aria-label="Visit Noir on Facebook"
-              className="hover:text-[#f0ddba] duration-200"
+              className="hover:text-[color:rgba(251,232,206,0.92)] duration-200 text-white/90"
               whileHover={{ y:-4, scale:1.08 }}
               transition={{ duration:0.2 }}
             >
@@ -111,7 +111,7 @@ function Footer() {
               target="_blank"
               rel="noreferrer"
               aria-label="Visit Noir on YouTube"
-              className="hover:text-[#f0ddba] duration-200"
+              className="hover:text-[color:rgba(251,232,206,0.92)] duration-200 text-white/90"
               whileHover={{ y:-4, scale:1.08 }}
               transition={{ duration:0.2 }}
             >

@@ -1,87 +1,137 @@
-import { Canvas } from "@react-three/fiber";
-import { Environment, Float, OrbitControls } from "@react-three/drei";
-
-function BottleModel() {
-  return (
-    <group>
-      <mesh position={[0, 0.15, 0]} castShadow receiveShadow>
-        <cylinderGeometry args={[0.75, 0.95, 2.2, 64]} />
-        <meshPhysicalMaterial
-          color="#1c1716"
-          metalness={0.15}
-          roughness={0.25}
-          transmission={0.18}
-          thickness={0.9}
-          clearcoat={1}
-          clearcoatRoughness={0.08}
-        />
-      </mesh>
-
-      <mesh position={[0, 1.6, 0]} castShadow>
-        <cylinderGeometry args={[0.33, 0.33, 0.55, 48]} />
-        <meshStandardMaterial color="#141010" metalness={0.75} roughness={0.25} />
-      </mesh>
-
-      <mesh position={[0, -0.45, 0.93]} castShadow>
-        <planeGeometry args={[1.05, 0.5]} />
-        <meshStandardMaterial color="#b1925b" metalness={0.2} roughness={0.5} />
-      </mesh>
-    </group>
-  );
-}
+import { useMemo, useState } from "react";
+import { motion, useMotionValue, useSpring } from "framer-motion";
+import bottle from "../assets/original-bottle.png";
 
 function BottleShowcase3D() {
+  const [zoom,setZoom]=useState(1);
+  const rotate=0;
+
+  const rotateX=useMotionValue(0);
+  const rotateY=useMotionValue(0);
+  const rX=useSpring(rotateX,{ stiffness:220, damping:18, mass:0.55 });
+  const rY=useSpring(rotateY,{ stiffness:220, damping:18, mass:0.55 });
+
+  const transform=useMemo(()=>{
+    return {
+      rotateX:rX,
+      rotateY:rY,
+      rotateZ:0,
+      scale:zoom,
+      translateZ:90
+    };
+  },[rX,rY,zoom]);
+
+  function clamp(value,min,max){
+    return Math.min(max,Math.max(min,value));
+  }
+
+  function handleMove(e){
+    const rect=e.currentTarget.getBoundingClientRect();
+    const px=(e.clientX-rect.left)/rect.width;
+    const py=(e.clientY-rect.top)/rect.height;
+    rotateY.set((px-0.5)*18 + rotate);
+    rotateX.set((0.5-py)*14);
+  }
+
+  function handleEnter(){
+    setZoom((z)=>clamp(Number((z+0.06).toFixed(2)),0.9,1.35));
+  }
+
+  function handleLeave(){
+    rotateX.set(0);
+    rotateY.set(rotate);
+    setZoom(1);
+  }
+
   return (
-    <section id="showcase" className="section bg-[#efe5d8]">
+    <section id="showcase" className="section tone-2">
       <div className="container-lux grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
         <div>
-          <p className="eyebrow text-[#5c1f25] mb-4">3D signature bottle</p>
-          <h2 className="title text-4xl sm:text-5xl md:text-7xl">Designed Like A Luxury Object.</h2>
-          <p className="mt-6 md:mt-7 text-base sm:text-lg md:text-xl leading-7 md:leading-8 text-muted max-w-xl">
-            Rotate and inspect the NOIR bottle from every angle. We crafted the visual to feel substantial, architectural, and premium.
+          <p className="eyebrow text-[var(--wine)] mb-4">Signature bottle</p>
+          <h2 className="section-title text-4xl sm:text-5xl md:text-7xl">
+            Your <span className="highlight">icon</span> on the vanity.
+          </h2>
+          <p className="mt-6 md:mt-7 text-base sm:text-lg md:text-xl leading-7 md:leading-8 text-muted max-w-xl section-copy">
+            A clean blue glass bottle with sharp edges, soft reflections, and a cap that catches light the moment you move.
           </p>
+
           <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-lg">
-            <div className="bg-[#f7f3ec] rounded-lg soft-border p-4 rise-float">
-              <p className="eyebrow text-[#a77f37]">Material</p>
-              <p className="mt-2 text-lg font-semibold">Heavy Smoked Glass</p>
+            <div className="bg-[color:rgba(255,255,255,0.55)] rounded-lg soft-border p-4">
+              <p className="eyebrow text-[var(--gold)]">Look</p>
+              <p className="mt-2 text-lg font-semibold">Glass shine + clean edges</p>
             </div>
-            <div className="bg-[#f7f3ec] rounded-lg soft-border p-4 rise-float" style={{ animationDelay:"0.6s" }}>
-              <p className="eyebrow text-[#a77f37]">Finish</p>
-              <p className="mt-2 text-lg font-semibold">Matte Noir Cap</p>
+            <div className="bg-[color:rgba(255,255,255,0.55)] rounded-lg soft-border p-4">
+              <p className="eyebrow text-[var(--gold)]">Feel</p>
+              <p className="mt-2 text-lg font-semibold">Studio-finished presence</p>
             </div>
           </div>
         </div>
 
-        <div className="h-[360px] sm:h-[420px] md:h-[560px] rounded-lg overflow-hidden soft-border luxury-shadow bg-[radial-gradient(circle_at_30%_20%,#f8efe2_0%,#e4d5c0_45%,#d7c3a8_100%)]">
-          <Canvas shadows camera={{ position: [2.8, 1.8, 3.2], fov: 38 }}>
-            <ambientLight intensity={0.5} />
-            <directionalLight
-              position={[4, 5, 3]}
-              intensity={1.4}
-              castShadow
-              shadow-mapSize-width={1024}
-              shadow-mapSize-height={1024}
-            />
-            <directionalLight position={[-3, 2, -2]} intensity={0.55} />
+        <div className="h-[360px] sm:h-[420px] md:h-[560px] rounded-lg overflow-hidden soft-border luxury-shadow bg-[radial-gradient(circle_at_28%_20%,color-mix(in_srgb,var(--palette-sky)_62%,white)_0%,color-mix(in_srgb,var(--palette-lilac)_44%,white)_52%,color-mix(in_srgb,var(--palette-violet)_18%,transparent)_100%)]">
+          <div className="relative h-full w-full grid place-items-center p-6 tilt-stage">
+            <motion.div
+              className="relative w-full h-full max-w-[520px] grid place-items-center"
+              initial={{ opacity: 0, y: 18 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.35 }}
+              transition={{ duration: 0.6 }}
+            >
+              <motion.div
+                className="relative grid place-items-center select-none"
+                style={{ transformStyle: "preserve-3d" }}
+                animate={{ rotateY: [0, 6, 0, -6, 0], rotateX: [0, -3, 0, 3, 0] }}
+                transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+                onMouseMove={handleMove}
+                onMouseEnter={handleEnter}
+                onMouseLeave={handleLeave}
+              >
+                <motion.div
+                  className="absolute inset-0 rounded-3xl pointer-events-none"
+                  style={{
+                    background:
+                      "radial-gradient(circle at 35% 25%, rgba(255,255,255,0.8), rgba(255,255,255,0) 55%)",
+                    mixBlendMode: "soft-light",
+                    opacity: 0.85,
+                    transform: "translateZ(70px)"
+                  }}
+                />
 
-            <Float speed={1.2} rotationIntensity={0.45} floatIntensity={0.6}>
-              <BottleModel />
-            </Float>
+                <motion.div
+                  className="absolute inset-0 rounded-3xl pointer-events-none"
+                  style={{
+                    background:
+                      "linear-gradient(120deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.65) 44%, rgba(255,255,255,0) 70%)",
+                    mixBlendMode: "screen",
+                    opacity: 0.55,
+                    transform: "translateZ(85px) rotateZ(-8deg)"
+                  }}
+                  animate={{ x: ["-32%", "32%", "-32%"] }}
+                  transition={{ duration: 5.6, repeat: Infinity, ease: "easeInOut" }}
+                />
 
-            <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -1.08, 0]} receiveShadow>
-              <circleGeometry args={[3.1, 64]} />
-              <meshStandardMaterial color="#cfb590" roughness={0.9} />
-            </mesh>
+                <motion.img
+                  src={bottle}
+                  alt="Perfume bottle"
+                  className="max-h-[92%] w-auto object-contain drop-shadow-[0_34px_90px_rgba(0,0,0,0.28)]"
+                  style={transform}
+                  whileHover={{ filter: "saturate(1.05) contrast(1.06)" }}
+                  transition={{ duration: 0.35 }}
+                  draggable={false}
+                  loading="lazy"
+                />
 
-            <Environment preset="city" />
-            <OrbitControls
-              enablePan={false}
-              minDistance={2.7}
-              maxDistance={5.2}
-              minPolarAngle={Math.PI / 3.2}
-              maxPolarAngle={Math.PI / 1.8}
-            />
-          </Canvas>
+                <motion.div
+                  className="absolute -bottom-10 left-1/2 -translate-x-1/2 w-[82%] h-14 blur-2xl rounded-full pointer-events-none"
+                  style={{
+                    background: "radial-gradient(closest-side, rgba(0,0,0,0.30), rgba(0,0,0,0))",
+                    opacity: 0.55
+                  }}
+                  animate={{ scale: [0.98, 1.05, 0.98] }}
+                  transition={{ duration: 3.4, repeat: Infinity, ease: "easeInOut" }}
+                />
+              </motion.div>
+            </motion.div>
+          </div>
         </div>
       </div>
     </section>
