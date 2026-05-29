@@ -1,7 +1,10 @@
+import LineBackdrop from "./LineBackdrop";
+
 function VideoSection() {
   return (
-    <section id="atelier" className="section tone-6">
-      <div className="container-lux grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
+    <section id="atelier" className="section tone-6 relative overflow-hidden">
+      <LineBackdrop variant="panel" className="opacity-20 mix-blend-multiply" />
+      <div className="container-lux relative grid lg:grid-cols-2 gap-10 lg:gap-14 items-center text-center lg:text-left">
         <div className="relative">
           <img
             src="https://images.unsplash.com/photo-1523293182086-7651a899d37f?q=80&w=1600&auto=format&fit=crop"

@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import LineBackdrop from "./LineBackdrop";
 
 function Testimonials() {
   const reviews=[
@@ -18,11 +19,11 @@ function Testimonials() {
   }
 
   return (
-    <section id="reviews" className="section tone-4">
+    <section id="reviews" className="section tone-4 relative overflow-hidden">
+      <LineBackdrop variant="panel" className="opacity-20 mix-blend-multiply" />
+      <div className="container-lux relative">
 
-      <div className="container-lux">
-
-        <div className="grid lg:grid-cols-[0.75fr_1.25fr] gap-10">
+        <div className="grid lg:grid-cols-[0.75fr_1.25fr] gap-10 text-center lg:text-left">
 
           <div>
             <p className="eyebrow text-[var(--wine)] mb-4">Client notes</p>

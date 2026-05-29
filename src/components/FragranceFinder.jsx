@@ -2,6 +2,7 @@ import { useMemo, useState } from "react";
 import { motion } from "framer-motion";
 
 import { NOTE_PYRAMID, PERFUMES } from "../data/perfumes";
+import LineBackdrop from "./LineBackdrop";
 
 function Stars({rating=0}) {
   const full=Math.floor(rating);
@@ -54,9 +55,10 @@ function FragranceFinder({onPerfumeSelect}) {
   },[selection]);
 
   return (
-    <section id="finder" className="section tone-10">
-      <div className="container-lux">
-        <div className="max-w-3xl">
+    <section id="finder" className="section tone-10 relative overflow-hidden">
+      <LineBackdrop variant="panel" className="opacity-25 mix-blend-multiply" />
+      <div className="container-lux relative">
+        <div className="max-w-3xl mx-auto lg:mx-0 text-center lg:text-left">
           <p className="eyebrow text-[var(--wine)] mb-4">Smart recommendation</p>
           <h2 className="section-title text-4xl sm:text-5xl md:text-7xl">Find Your <span className="highlight">Perfume</span> By Note Pyramid</h2>
           <p className="mt-6 md:mt-7 text-base sm:text-lg md:text-xl text-muted leading-7 md:leading-8 section-copy">
@@ -66,17 +68,12 @@ function FragranceFinder({onPerfumeSelect}) {
 
         <div className="mt-10 grid gap-7 items-start lg:grid-cols-[minmax(0,1fr)_minmax(320px,420px)] lg:gap-10">
           <motion.div
-            className="relative bg-[color:rgba(255,255,255,0.62)] rounded-lg soft-border p-6 md:p-7 luxury-shadow overflow-hidden self-start"
+            className="relative bg-[color:rgba(255,255,255,0.62)] rounded-lg soft-border p-5 sm:p-6 md:p-7 luxury-shadow overflow-hidden self-start"
             initial={{ opacity:0, x:-26 }}
             whileInView={{ opacity:1, x:0 }}
             viewport={{ once:true, amount:0.25 }}
             transition={{ duration:0.5 }}
           >
-            <motion.div
-              className="absolute -top-20 -right-20 w-56 h-56 rounded-full bg-[color:rgba(215,183,255,0.55)] blur-3xl"
-              animate={{ scale:[1,1.1,1], opacity:[0.45,0.7,0.45] }}
-              transition={{ duration:5, repeat:Infinity, ease:"easeInOut" }}
-            />
             <div className="space-y-6 relative z-10">
               <motion.div
                 initial={{ opacity:0, y:18 }}
@@ -84,8 +81,8 @@ function FragranceFinder({onPerfumeSelect}) {
                 viewport={{ once:true, amount:0.3 }}
                 transition={{ delay:0.05, duration:0.4 }}
               >
-                <div className="flex items-center justify-between mb-3 gap-3">
-                  <p className="section-title text-3xl sm:text-4xl text-[var(--wine)]">Top Notes (The Opening)</p>
+                <div className="flex items-center justify-between mb-3 gap-3 flex-col sm:flex-row">
+                  <p className="section-title text-2xl sm:text-4xl text-[var(--wine)]">Top Notes (The Opening)</p>
                   <p className="text-xs sm:text-sm font-semibold uppercase tracking-[0.12em] text-[color:var(--muted)]">Duration: 0-15 mins</p>
                 </div>
                 <div className="flex flex-wrap gap-2">
@@ -117,8 +114,8 @@ function FragranceFinder({onPerfumeSelect}) {
                 viewport={{ once:true, amount:0.3 }}
                 transition={{ delay:0.12, duration:0.4 }}
               >
-                <div className="flex items-center justify-between mb-3 gap-3">
-                  <p className="section-title text-3xl sm:text-4xl text-[var(--wine)]">Middle Notes (The Heart)</p>
+                <div className="flex items-center justify-between mb-3 gap-3 flex-col sm:flex-row">
+                  <p className="section-title text-2xl sm:text-4xl text-[var(--wine)]">Middle Notes (The Heart)</p>
                   <p className="text-xs sm:text-sm font-semibold uppercase tracking-[0.12em] text-[color:var(--muted)]">Duration: 15 mins-4 hrs</p>
                 </div>
                 <div className="flex flex-wrap gap-2">
@@ -150,8 +147,8 @@ function FragranceFinder({onPerfumeSelect}) {
                 viewport={{ once:true, amount:0.3 }}
                 transition={{ delay:0.2, duration:0.4 }}
               >
-                <div className="flex items-center justify-between mb-3 gap-3">
-                  <p className="section-title text-3xl sm:text-4xl text-[var(--wine)]">Base Notes (The Soul)</p>
+                <div className="flex items-center justify-between mb-3 gap-3 flex-col sm:flex-row">
+                  <p className="section-title text-2xl sm:text-4xl text-[var(--wine)]">Base Notes (The Soul)</p>
                   <p className="text-xs sm:text-sm font-semibold uppercase tracking-[0.12em] text-[color:var(--muted)]">Duration: 4-12 hrs</p>
                 </div>
                 <div className="flex flex-wrap gap-2">
@@ -186,11 +183,6 @@ function FragranceFinder({onPerfumeSelect}) {
             viewport={{ once:true, amount:0.25 }}
             transition={{ duration:0.5 }}
           >
-            <motion.div
-              className="absolute -bottom-24 -left-20 w-56 h-56 rounded-full bg-[#f4d89b]/20 blur-3xl"
-              animate={{ scale:[1,1.15,1], opacity:[0.3,0.55,0.3] }}
-              transition={{ duration:5.5, repeat:Infinity, ease:"easeInOut" }}
-            />
             <p className="eyebrow text-[#d9c39a]">Recommended perfume</p>
             <p className="mt-2 text-sm text-[#d3c9bc] leading-6 max-w-[42ch]">
               One match based on your Top, Heart, and Base selections.
@@ -202,14 +194,14 @@ function FragranceFinder({onPerfumeSelect}) {
                 className="mt-5 rounded-lg border border-white/14 p-4 sm:p-5 bg-white/[0.03] relative z-10 cursor-pointer"
                 initial={{ opacity:0, y:18 }}
                 animate={{ opacity:1, y:0 }}
-                whileHover={{ y:-6, scale:1.01 }}
+                whileHover={{ y:-6 }}
                 transition={{ duration:0.25 }}
               >
                 <div className="rounded-lg overflow-hidden border border-white/10">
                   <img
                     src={bestMatch.image}
                     alt={`${bestMatch.name} perfume`}
-                    className="w-full h-40 sm:h-44 object-cover image-treatment hover-zoom"
+                    className="w-full h-36 sm:h-44 object-cover image-treatment hover-zoom"
                     loading="lazy"
                   />
                 </div>

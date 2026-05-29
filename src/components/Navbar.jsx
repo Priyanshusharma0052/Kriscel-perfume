@@ -30,9 +30,9 @@ function Navbar() {
       className="fixed top-0 w-full z-50 bg-[color:color-mix(in_srgb,var(--palette-mint)_55%,white)] border-b border-[color:rgba(20,16,24,0.12)] shadow-[0_14px_40px_rgba(0,0,0,0.08)]"
     >
 
-      <div className="container-lux flex justify-between items-center px-5 md:px-10 py-4 md:py-5">
+      <div className="container-lux flex justify-between items-center px-4 sm:px-5 md:px-10 py-3.5 md:py-5">
 
-        <a href="#home" onClick={goHome} className="text-2xl sm:text-3xl md:text-4xl title font-bold text-[color:var(--text)] tracking-[0.08em] uppercase">
+        <a href="#home" onClick={goHome} className="text-xl sm:text-3xl md:text-4xl title font-bold text-[color:var(--text)] tracking-[0.08em] uppercase">
           KRISCEL PERFUMES
         </a>
 

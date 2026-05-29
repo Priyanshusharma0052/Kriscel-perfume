@@ -46,7 +46,7 @@ function Collection({onPerfumeSelect}) {
 
       <div className="container-lux">
 
-        <div className="grid lg:grid-cols-[0.8fr_1.2fr] gap-12 items-end mb-14">
+        <div className="grid lg:grid-cols-[0.8fr_1.2fr] gap-12 items-end mb-14 text-center lg:text-left">
 
           <div>
             <p className="eyebrow text-[var(--wine)] mb-4">The collection</p>
@@ -55,7 +55,7 @@ function Collection({onPerfumeSelect}) {
             </h2>
           </div>
 
-          <p className="section-copy text-lg md:text-xl leading-8 text-muted max-w-2xl">
+          <p className="section-copy text-lg md:text-xl leading-8 text-muted max-w-2xl mx-auto lg:mx-0">
             Each scent is built like a story: an opening, a heart, and a finish that lingers on skin and fabric.
           </p>
 
@@ -117,7 +117,7 @@ function Collection({onPerfumeSelect}) {
                 initial={{ opacity:0, y:30 }}
                 whileInView={{ opacity:1, y:0 }}
                 viewport={{ once:true, amount:0.25 }}
-                whileHover={{ y:-10, rotate:-0.3 }}
+                whileHover={{ y:-10 }}
                 transition={{ duration:0.5 }}
               >
                 <div className="aspect-[4/5] bg-[radial-gradient(circle_at_35%_15%,color-mix(in_srgb,var(--palette-sky)_55%,white)_0%,color-mix(in_srgb,var(--palette-lilac)_35%,white)_48%,rgba(255,255,255,0.6)_100%)]">
