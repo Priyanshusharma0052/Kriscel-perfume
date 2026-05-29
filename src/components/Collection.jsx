@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import "swiper/css";
 
 import { PERFUMES } from "../data/perfumes";
+import LineBackdrop from "./LineBackdrop";
 
 function Stars({rating}) {
   const full=Math.floor(rating);
@@ -42,9 +43,10 @@ function Collection({onPerfumeSelect}) {
   },[selectedFamily,selectedConcentration]);
 
   return (
-    <section id="collection" className="section tone-1">
+    <section id="collection" className="section tone-1 relative overflow-hidden">
+      <LineBackdrop variant="panel" className="opacity-18 mix-blend-multiply" />
 
-      <div className="container-lux">
+      <div className="container-lux relative">
 
         <div className="grid lg:grid-cols-[0.8fr_1.2fr] gap-12 items-end mb-14 text-center lg:text-left">
 

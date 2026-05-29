@@ -1,7 +1,10 @@
+import LineBackdrop from "./LineBackdrop";
+
 function CartSection({items,onIncrement,onDecrement,onCheckout}) {
   return (
-    <section id="cart" className="section bg-[#14100e] text-[#f7f3ec]">
-      <div className="container-lux grid lg:grid-cols-[1.2fr_0.8fr] gap-8">
+    <section id="cart" className="section bg-[#14100e] text-[#f7f3ec] relative overflow-hidden">
+      <LineBackdrop variant="panel" className="opacity-10 mix-blend-screen" />
+      <div className="container-lux relative grid lg:grid-cols-[1.2fr_0.8fr] gap-8">
         <div>
           <p className="eyebrow text-[#d9c39a] mb-4">Your selection</p>
           <h2 className="title text-5xl md:text-7xl">Shopping Cart</h2>

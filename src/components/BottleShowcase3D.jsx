@@ -47,8 +47,9 @@ function BottleShowcase3D() {
   }
 
   return (
-    <section id="showcase" className="section tone-2">
-      <div className="container-lux grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+    <section id="showcase" className="section tone-2 relative overflow-hidden">
+      <LineBackdrop variant="panel" className="opacity-16 mix-blend-multiply" />
+      <div className="container-lux relative grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
         <div>
           <p className="eyebrow text-[var(--wine)] mb-4">Signature bottle</p>
           <h2 className="section-title text-4xl sm:text-5xl md:text-7xl text-center lg:text-left">

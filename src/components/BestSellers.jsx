@@ -1,3 +1,5 @@
+import LineBackdrop from "./LineBackdrop";
+
 const products = [
 
   {
@@ -47,9 +49,9 @@ function BestSellers({onPerfumeSelect}) {
   }
 
   return (
-    <section className="section tone-8">
-
-      <div className="container-lux">
+    <section className="section tone-8 relative overflow-hidden">
+      <LineBackdrop variant="panel" className="opacity-16 mix-blend-multiply" />
+      <div className="container-lux relative">
 
         <div className="text-center max-w-3xl mx-auto mb-14">
           <p className="eyebrow text-[var(--wine)] mb-4">Most requested</p>

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import LineBackdrop from "./LineBackdrop";
 
 function ProductPage({onPerfumeSelect,onRequestAvailability}) {
   const [size,setSize]=useState("50ml");
@@ -20,9 +21,9 @@ function ProductPage({onPerfumeSelect,onRequestAvailability}) {
   };
 
   return (
-    <section id="shop" className="section tone-5">
-
-      <div className="container-lux grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+    <section id="shop" className="section tone-5 relative overflow-hidden">
+      <LineBackdrop variant="panel" className="opacity-16 mix-blend-multiply" />
+      <div className="container-lux relative grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
         <div className="relative">
           <div className="absolute inset-6 border border-[color:rgba(255,255,255,0.55)]"></div>

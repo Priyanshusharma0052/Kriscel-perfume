@@ -1,3 +1,5 @@
+import LineBackdrop from "./LineBackdrop";
+
 const options=[
   {
     id:"discovery-kit",
@@ -21,8 +23,9 @@ const options=[
 
 function ConciergeOptions() {
   return (
-    <section id="options" className="section tone-11">
-      <div className="container-lux">
+    <section id="options" className="section tone-11 relative overflow-hidden">
+      <LineBackdrop variant="panel" className="opacity-16 mix-blend-multiply" />
+      <div className="container-lux relative">
         <div className="max-w-3xl">
           <p className="eyebrow text-[var(--wine)] mb-4">More options</p>
           <h2 className="section-title text-4xl sm:text-5xl md:text-7xl">Concierge <span className="highlight">Services</span> & <span className="highlight-2">Gifting</span></h2>

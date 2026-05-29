@@ -1,6 +1,7 @@
 import { useMemo, useState } from "react";
 import { motion } from "framer-motion";
 import { FEATURED_OCCASIONAL_IDS, PERFUMES } from "../data/perfumes";
+import LineBackdrop from "./LineBackdrop";
 
 function Stars({rating}) {
   const full=Math.floor(rating);
@@ -54,8 +55,9 @@ function LuxurySlider({onPerfumeSelect}) {
   }
 
   return (
-    <section className="section tone-7">
-      <div className="container-lux">
+    <section className="section tone-7 relative overflow-hidden">
+      <LineBackdrop variant="panel" className="opacity-16 mix-blend-multiply" />
+      <div className="container-lux relative">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-14">
           <div>
             <p className="eyebrow text-[var(--wine)] mb-4">Occasional edit</p>

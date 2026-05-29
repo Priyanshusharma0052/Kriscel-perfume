@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import LineBackdrop from "./LineBackdrop";
 
 function Notes() {
   const notes=[
@@ -20,9 +21,9 @@ function Notes() {
   ];
 
   return (
-    <section id="notes" className="section tone-9">
-
-      <div className="container-lux">
+    <section id="notes" className="section tone-9 relative overflow-hidden">
+      <LineBackdrop variant="panel" className="opacity-16 mix-blend-multiply" />
+      <div className="container-lux relative">
 
         <div className="max-w-3xl mb-14">
           <p className="eyebrow text-[var(--wine)] mb-4">Fragrance architecture</p>

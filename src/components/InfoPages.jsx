@@ -1,9 +1,11 @@
 import { useState } from "react";
+import LineBackdrop from "./LineBackdrop";
 
 function AboutPage() {
   return (
-    <section className="section tone-1 pt-28 md:pt-32">
-      <div className="container-lux">
+    <section className="section tone-1 pt-28 md:pt-32 relative overflow-hidden">
+      <LineBackdrop variant="panel" className="opacity-14 mix-blend-multiply" />
+      <div className="container-lux relative">
         <p className="eyebrow text-[var(--wine)] mb-4">About NOIR</p>
         <h1 className="title text-4xl sm:text-5xl md:text-7xl max-w-4xl">A Modern Luxury Fragrance House</h1>
         <p className="mt-6 md:mt-7 max-w-4xl text-base sm:text-lg md:text-xl leading-7 md:leading-8 text-muted">
@@ -59,8 +61,9 @@ function CareersPage() {
   ];
 
   return (
-    <section className="section tone-2 pt-28 md:pt-32">
-      <div className="container-lux">
+    <section className="section tone-2 pt-28 md:pt-32 relative overflow-hidden">
+      <LineBackdrop variant="panel" className="opacity-14 mix-blend-multiply" />
+      <div className="container-lux relative">
         <p className="eyebrow text-[var(--wine)] mb-4">Careers</p>
         <h1 className="title text-4xl sm:text-5xl md:text-7xl max-w-4xl">Build Luxury Experiences With Us</h1>
         <p className="mt-6 md:mt-7 max-w-4xl text-base sm:text-lg md:text-xl leading-7 md:leading-8 text-muted">
@@ -106,8 +109,9 @@ function ContactPage() {
   }
 
   return (
-    <section className="section tone-1 pt-28 md:pt-32">
-      <div className="container-lux grid lg:grid-cols-[1fr_1.1fr] gap-8">
+    <section className="section tone-1 pt-28 md:pt-32 relative overflow-hidden">
+      <LineBackdrop variant="panel" className="opacity-14 mix-blend-multiply" />
+      <div className="container-lux relative grid lg:grid-cols-[1fr_1.1fr] gap-8">
         <div>
           <p className="eyebrow text-[var(--wine)] mb-4">Contact</p>
           <h1 className="title text-4xl sm:text-5xl md:text-7xl">Talk To Our Concierge</h1>
@@ -162,8 +166,9 @@ function ContactPage() {
 
 function TermsPage() {
   return (
-    <section className="section tone-2 pt-28 md:pt-32">
-      <div className="container-lux max-w-4xl">
+    <section className="section tone-2 pt-28 md:pt-32 relative overflow-hidden">
+      <LineBackdrop variant="panel" className="opacity-14 mix-blend-multiply" />
+      <div className="container-lux relative max-w-4xl">
         <p className="eyebrow text-[var(--wine)] mb-4">Legal</p>
         <h1 className="title text-4xl sm:text-5xl md:text-7xl">Terms & Conditions</h1>
         <div className="mt-8 space-y-6 text-[#2a2623] leading-8">
@@ -185,8 +190,9 @@ function TermsPage() {
 
 function PoliciesPage() {
   return (
-    <section className="section tone-1 pt-28 md:pt-32">
-      <div className="container-lux max-w-4xl">
+    <section className="section tone-1 pt-28 md:pt-32 relative overflow-hidden">
+      <LineBackdrop variant="panel" className="opacity-14 mix-blend-multiply" />
+      <div className="container-lux relative max-w-4xl">
         <p className="eyebrow text-[var(--wine)] mb-4">Legal</p>
         <h1 className="title text-4xl sm:text-5xl md:text-7xl">Policies</h1>
         <div className="mt-8 space-y-6 text-[#2a2623] leading-8">
